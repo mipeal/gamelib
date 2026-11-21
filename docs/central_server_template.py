@@ -12,8 +12,8 @@ SERVICE_TOKEN_SECRET = 'abcdefgh'
 
 # === try to load the gameserver's config file ===
 # TODO adjust loading and yaml parsing (if we ever need this again)
-if 'SAARCTF_CONFIG_DIR' in os.environ:
-    basedir = os.path.abspath(os.environ['SAARCTF_CONFIG_DIR'])
+if 'CTF_CONFIG_DIR' in os.environ:
+    basedir = os.path.abspath(os.environ['CTF_CONFIG_DIR'])
 else:
     basedir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 possible_config_files = [
@@ -21,8 +21,8 @@ possible_config_files = [
     basedir + '/config2.json',
     basedir + '/config.json'
 ]
-if 'SAARCTF_CONFIG' in os.environ:
-    possible_config_files = [os.environ['SAARCTF_CONFIG']] + possible_config_files
+if 'CTF_CONFIG' in os.environ:
+    possible_config_files = [os.environ['CTF_CONFIG']] + possible_config_files
 
 CONFIG: Dict[str, Any] = {}
 for configfile in possible_config_files:

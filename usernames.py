@@ -5723,7 +5723,7 @@ def generate_random_string(l: int = 8, alphanum: bool = True) -> str:
 
 
 def generate_dummy_flag(size: int = 32) -> str:
-    return 'SAAR{' + ''.join(random.choice(string.ascii_letters + string.digits + '-_') for _ in range(size)) + '}'
+    return 'FLAG{' + ''.join(random.choice(string.ascii_letters + string.digits + '-_') for _ in range(size)) + '}'
 
 
 def generate_random_text(words: int = 10) -> str:
